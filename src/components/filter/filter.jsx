@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ecom from '../../assets/ecom.svg'
 
 const productdata = [
   { id: 1, name: "Product 1", price: 100, category: "computing" },
@@ -23,48 +24,54 @@ const Filter = () => {
   });
 
   return (
-    <div className="p-6">
-      <div className="flex space-x-4 mb-4">
-        <select
-          className="border rounded p-2 "
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option className="text-black" value="all">All Categories</option>
-          <option className="text-black" value="computing">Computing</option>
-          <option className="text-black" value="computing">Cloth</option>
-          <option className="text-black" value="bike">Bike</option>
-          <option className="text-black" value="toys">Toys</option>
-          <option className="text-black" value="car">Car</option>
-        </select>
-        <input
-          type="range"
-          className="border rounded p-2"
-          min="0"
-          max="1000"
-          value={maxPrice}
-          onChange={(e) => setMaxPrice(e.target.value)}
-        />
-        <span>${maxPrice}</span>
+    <>
+      <div className="image">
+        <img className="w-1/2 h-1/2 mx-auto" src={ecom}></img>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {filterProduct.length > 0 ? (
-          filterProduct.map((product) => (
-            <div
-              key={product.id}
-              className="border rounded p-4 shadow-md"
-            >
-              <h3 className="text-lg font-bold">{product.name}</h3>
-              <p className="text-8">Price: ${product.price}</p>
-              <p className="text-8">Category: {product.category}</p>
-            </div>
-          ))
-        ) : (
-          <p className="text-yellow-400 text-[20px]">No products found</p>
-        )}
+      <div className="p-6">
+        <div className="flex space-x-4 mb-4">
+          <select
+            className="border rounded"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option className="text-black" value="all">All Categories</option>
+            <option className="text-black" value="computing">Computing</option>
+            <option className="text-black" value="computing">Cloth</option>
+            <option className="text-black" value="bike">Bike</option>
+            <option className="text-black" value="toys">Toys</option>
+            <option className="text-black" value="car">Car</option>
+          </select>
+          <input
+            type="range"
+            className="border rounded p-2"
+            min="0"
+            max="1000"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value)}
+          />
+          <span>${maxPrice}</span>
+        </div>
+        <div className="w-3/4 h-3/4  grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {filterProduct.length > 0 ? (
+            filterProduct.map((product) => (
+              <div
+                key={product.id}
+                className="border rounded p-4 shadow-md"
+              >
+                <h3 className="text-lg font-bold">{product.name}</h3>
+                <p className="text-8">Price: ${product.price}</p>
+                <p className="text-8">Category: {product.category}</p>
+              </div>
+            ))
+          ) : (
+            <p className="text-[#84D99C] text-[20px]">No products found</p>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
+
 };
 
 export default Filter;
