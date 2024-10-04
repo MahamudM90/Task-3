@@ -1,8 +1,27 @@
-# React + Vite
+## The product list updates dynamically per the selected filters using React hooks.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The product list updates dynamically as per the selected filters
 
-Currently, two official plugins are available:
+## Technologies uses
+ - React
+ - Tailwind CSS
+ - React hooks
+   
+## The design include
+ - A hero Section
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ - Product category and progress bar
+
+-  Card by using a grid Layout
+
+-  The page is mobile-first and optimized for different screen sizes.
+  
+ ## Run it Locally
+```
+$ https://github.com/MahamudM90/Task-3.git
+$ cd filter-product
+$ npm install
+$ npm run dev
+```
+
+  ###    [Live Site](https://steadtask-3.netlify.app)
